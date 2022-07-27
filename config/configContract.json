@@ -1,0 +1,6 @@
+{
+    "contractDir":"./rpc/contracts/",
+    "contractAbiDir":"contractAbi.json",
+    "contractBytecodeDir":"contractBytecode.json",
+    "contractAddressDir":"contractAddress.json"
+}
