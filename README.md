@@ -5,10 +5,10 @@ EVM based chain test tool.
 There is a simple solidity contract to test(store and inquiry number).
 
 ## Prerequisites
-- Go, Geth, nodejs
+- Go, Geth, Nodejs
 - Set config file
   - `./config/config.json`
-    ```yaml
+  ```yaml
   {
     "targetUrl":"http://localhost:8545",
     "gasLimit":"58360"  
@@ -27,7 +27,7 @@ There is a simple solidity contract to test(store and inquiry number).
   }
   ```
   - `contractDir` : Default directory of contract
-  - `contractAbiDir`, `contractBytecodeDir` : Solidity contract ABI and bytecode file to deploy. (Default test solidity contract ABI & bytecode are set)
+  - `contractAbiDir`, `contractBytecodeDir` : Solidity contract ABI and bytecode file to deploy (Default test solidity contract ABI & bytecode are set)
   - `contractAddressDir` : After deploying contract, contract address saved file directory automatically
 - Set key config file
   - `./config/configKey.json`
