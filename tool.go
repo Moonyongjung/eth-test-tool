@@ -5,9 +5,9 @@ import (
 	"os/signal"
 	"syscall"
 
+	tool "github.com/Moonyongjung/eth-test-tool/T"
 	eclient "github.com/Moonyongjung/eth-test-tool/client"
 	"github.com/Moonyongjung/eth-test-tool/util"
-	tool "github.com/Moonyongjung/eth-test-tool/T"
 )
 
 var configPath = "./config/config.json"
@@ -21,7 +21,7 @@ func init() {
 }
 
 func main() {
-	
+
 	eclient.InitRpcClient()
 
 	tool.Start()
@@ -31,6 +31,5 @@ func main() {
 	<-stop
 
 	util.LogTool("Shutting down the server...")
-	util.LogTool("Server gracefully stopped")	
+	util.LogTool("Server gracefully stopped")
 }
-

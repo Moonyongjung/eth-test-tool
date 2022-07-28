@@ -42,8 +42,7 @@ func ParsingAbi(jsonFilePath string) string {
 			break
 		}
 	}
-	str := strings.Join(abiStrSlice, "")
-	str = strings.Replace(str, "\n", "", -1)
+	str := strings.Join(abiStrSlice, "")	
 	str = strings.Replace(str, " ", "", -1)
 
 	return str

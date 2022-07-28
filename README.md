@@ -50,4 +50,6 @@ There is a simple solidity contract to test(store and inquiry number).
 3. Call transaction
 4. Get transaction information (by hash)
 5. Get block information (by hash or height)
-6. Account info
+6. Account info(eth-test-tool)
+7. Account info(retrieve account)
+8. Send coin(from eth-test-tool address to others)

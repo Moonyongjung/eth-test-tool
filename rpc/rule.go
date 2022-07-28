@@ -2,8 +2,7 @@ package rpc
 
 import (
 	"io"
-	"os"
-	"strings"
+	"os"	
 
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 
@@ -24,9 +23,9 @@ func GolangBindings() {
 	bytecode := bytecodeData.(map[string]interface{})["contractBytecode"].(string)	
 
 	//-- Smart contract ABI
-	ABI := util.ParsingAbi(contractDir + contractAbiDir)
-	ABIPrint := strings.Replace(ABI, " ", "", -1)
-	util.LogTool("ABI : ", ABIPrint)
+	ABI := util.ParsingAbi(contractDir + contractAbiDir)	
+	
+	util.LogTool("ABI : ", ABI)
 	types := []string{"ethTestTool"}
 	abi := []string{ABI}
 	bytecodes := []string{bytecode}

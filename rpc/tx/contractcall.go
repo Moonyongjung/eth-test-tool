@@ -13,13 +13,16 @@ import (
 var callName = "retrieve"
 
 func SendCallTx() {
-	//-- Input for Call contract is empty string
+	//-- gaslimit of config file
+	//-- if gaslimit == 0, the call executes with near-infinite gas
 	defaultGasLimitStr := util.GetConfig().Get("gasLimit")
 	defaultGasLimit, err := util.ToInt(defaultGasLimitStr)
 	if err != nil {
 		util.LogRpcClient("Gas limit setting error")
 		return
 	}
+
+	// defaultGasLimit = uint64(0)
 		
 	client := eclient.NewRpcClient()
 	fromAddress := util.GetConfig().Get("AccountAddress")			
@@ -43,15 +46,15 @@ func SendCallTx() {
 			Data: byteData,
 		}
 
-		res, err := client.Client.CallContract(client.Ctx, msg, nil)			
+		res, err := client.Client.CallContract(client.Ctx, msg, nil)
 		if err != nil {
 			util.LogRpcClient(err)
 			return
 		}
+		util.LogTool("call response byte : ", res)
 
 		result := rpc.GetAbiUnpack(callName, res)
 
 		util.LogRpcClient("Contract Reponse : ", result)
-	}
-		
+	}		
 }

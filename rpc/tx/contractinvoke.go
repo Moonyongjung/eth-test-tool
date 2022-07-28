@@ -32,7 +32,7 @@ func SendInvokeTx(val string) {
 	priKey = priKey[2:]
 	priKeyCrypto, _ := crypto.HexToECDSA(priKey)
 	_, _, chainId, gasPrice := util.GetConfigRpc().Get()
-	gasPrice = util.StringToBigInt("10000000")
+	// gasPrice = util.StringToBigInt("10000000")
 	accountNonce := manage.NonceMng().NowNonce()
 
 	byteData := rpc.GetAbiPack(invokeName, valNum)

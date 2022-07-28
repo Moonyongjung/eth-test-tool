@@ -11,6 +11,14 @@ import (
 
 func GetAccountInfo() {
 	accountAddress := util.GetConfig().Get("AccountAddress")
+	inquiryAccountInfo(accountAddress)	
+}
+
+func RetrieveAccountInfo(account string) {	
+	inquiryAccountInfo(account)	
+}
+
+func inquiryAccountInfo(accountAddress string) {
 	client := eclient.NewRpcClient()
 
 	latestBlockNum, err := client.Client.BlockNumber(client.Ctx)

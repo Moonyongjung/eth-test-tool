@@ -13,7 +13,7 @@ func GetAbiPack(callName string, val *big.Int) []byte {
 
 	contractAbi, err := EthTestToolMetaData.GetAbi()
 	if err != nil {
-		util.LogTool(err)
+		util.LogTool("ABI get err : ", err)
 	}	
 
 	var abiByteData []byte
@@ -21,12 +21,12 @@ func GetAbiPack(callName string, val *big.Int) []byte {
 	if val == nil {
 		abiByteData, err = contractAbi.Pack(callName)
 		if err != nil {
-			util.LogTool(err)
+			util.LogTool("ABI pack err : ", err)
 		}
 	} else {
 		abiByteData, err = contractAbi.Pack(callName, val)
 		if err != nil {
-			util.LogTool(err)
+			util.LogTool("ABI pack err : ", err)
 		}
 	}	
 
@@ -36,12 +36,12 @@ func GetAbiPack(callName string, val *big.Int) []byte {
 func GetAbiUnpack(callName string, data []byte) []interface{} {
 	contractAbi, err := EthTestToolMetaData.GetAbi()
 	if err != nil {
-		util.LogTool(err)
+		util.LogTool("ABI get err : ", err)
 	}
 
 	unpacked, err := contractAbi.Unpack(callName, data)
 	if err != nil {
-		util.LogTool(err)
+		util.LogTool("ABI unpack err : ", err)
 	}
 
 	return unpacked
